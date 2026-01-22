@@ -12,7 +12,7 @@ app.use(express.json());
 
 // 1. Connect to Local MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/my_database")
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
