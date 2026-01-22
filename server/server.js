@@ -6,7 +6,7 @@ const cors = require("cors");
 const Category = require("./model/Category");
 const Customer = require("./model/customer");
 const Post = require("./model/post");
-
+const PORT = process.env.PORT || 5000;
 const dbURI = process.env.MONGO_URI || "mongodb://localhost:27017/my_database";
 
 const app = express();
@@ -163,23 +163,10 @@ app.delete("/api/category/:id", async (req, res) => {
 });
 
 // app.listen(5000, () => console.log("Server running on http://localhost:5000"));
-
-// 1. Tell Express to serve files from the "public" folder
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// 2. Point the main URL (/) to your index.html file
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get("/", (req, res) => {
+  res.send("Server is live!");
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-// app.get("/", (req, res) => {
-//   res.send("Server is live!");
-// });
-
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
