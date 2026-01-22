@@ -5,14 +5,14 @@ const cors = require("cors");
 const Category = require("./model/Category");
 const Customer = require("./model/customer");
 const Post = require("./model/post");
-
+const dbURI = process.env.MONGO_URI || "mongodb://localhost:27017/my_database";
 const app = express();
 app.use(cors()); // This allows your React app to talk to the server
 app.use(express.json());
 
 // 1. Connect to Local MongoDB
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(dbURI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
