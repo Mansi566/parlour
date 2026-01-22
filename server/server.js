@@ -164,9 +164,6 @@ app.delete("/api/category/:id", async (req, res) => {
 
 // app.listen(5000, () => console.log("Server running on http://localhost:5000"));
 
-// 1. Serve static files (CSS, JS, Images) from the root folder
-app.use(express.static(path.join(__dirname, './')));
-
 // 2. Point the main URL to your index.html in the root
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
