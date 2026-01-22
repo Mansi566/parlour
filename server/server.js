@@ -9,7 +9,7 @@ const dbURI = process.env.MONGO_URI || "mongodb://localhost:27017/my_database";
 const app = express();
 app.use(cors()); // This allows your React app to talk to the server
 app.use(express.json());
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 
 // 1. Connect to Local MongoDB
 mongoose
@@ -27,7 +27,14 @@ const upload = multer({ storage });
 // Create the 'uploads' folder statically so you can see the images in browser
 app.use("/uploads", express.static("uploads"));
 
+// 1. Serve static files from the React/Vite app
+// Note: If you use Vite, change 'build' to 'dist'
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
+// 2. Handle any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
 
 // //3. your post route for customer table
 app.post("/api/customers", async (req, res) => {
@@ -76,7 +83,6 @@ app.post("/api/Posts", upload.single("image"), async (req, res) => {
   }
 });
 
-
 // // 4. Your GET Route for customer
 app.get("/api/customers", async (req, res) => {
   try {
@@ -100,13 +106,12 @@ app.get("/api/category", async (req, res) => {
 
 // GET Route for Posts
 
-app.get("/api/Posts", async (req , res) => {
+app.get("/api/Posts", async (req, res) => {
   try {
     const post = await Post.find();
     res.status(200).json(post);
-  }
-  catch(err){
-    res.status(500).json({message :"Error fetching Post"});
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching Post" });
   }
 });
 
@@ -114,9 +119,9 @@ app.get("/api/Posts", async (req , res) => {
 //   try {
 //     // findByIdAndUpdate(id, data, options)
 //     const editCategory = await Category.findByIdAndUpdate(
-//       req.params.id, 
-//       req.body, 
-//       { new: true } 
+//       req.params.id,
+//       req.body,
+//       { new: true }
 //     );
 
 //     if (!editCategory) {
@@ -133,7 +138,7 @@ app.put("/api/category/:id", upload.single("image"), async (req, res) => {
   try {
     // 1. Prepare the data to update
     const updateData = {
-      name: req.body.name
+      name: req.body.name,
     };
 
     // 2. If a new file was uploaded, add the new path to the update object
@@ -145,14 +150,13 @@ app.put("/api/category/:id", upload.single("image"), async (req, res) => {
     const updatedDoc = await Category.findByIdAndUpdate(
       req.params.id,
       updateData,
-      { new: true } 
+      { new: true },
     );
 
     if (!updatedDoc) return res.status(404).send("Category not found");
 
     // 4. Send the NEW data back to React
     res.json(updatedDoc);
-    
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -166,7 +170,11 @@ app.delete("/api/category/:id", async (req, res) => {
 });
 
 // app.listen(5000, () => console.log("Server running on http://localhost:5000"));
-
+app.get("/", (req, res) => {
+  res.send(
+    "<h1>Welcome to my Website!</h1><p>The server is running perfectly.</p>",
+  );
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
