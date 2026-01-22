@@ -26,6 +26,11 @@ const upload = multer({ storage });
 // Create the 'uploads' folder statically so you can see the images in browser
 app.use("/uploads", express.static("uploads"));
 
+app.get('/', (req, res) => {
+  res.send('Server is running!'); 
+});
+
+
 // //3. your post route for customer table
 app.post("/api/customers", async (req, res) => {
   try {
