@@ -163,15 +163,8 @@ app.delete("/api/category/:id", async (req, res) => {
 });
 
 // app.listen(5000, () => console.log("Server running on http://localhost:5000"));
-// app.get("/", (req, res) => {
-//   res.send("Server is live!");
-// });
-
-
-app.use(express.static("dist"));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve("dist", "index.html"));
+app.get("/", (req, res) => {
+  res.send("Server is live!");
 });
 
 app.listen(PORT, () => {
