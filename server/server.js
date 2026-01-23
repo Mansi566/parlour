@@ -166,6 +166,8 @@ app.delete("/api/category/:id", async (req, res) => {
 app.get("/", (req, res) => {
   res.send("Server is live!");
   res.sendFile(path.join(__dirname, "..", "index.html"));
+  return res.send("OK");
+
 });
 
 app.listen(PORT, () => {
