@@ -1,9 +1,9 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-const mongoose = require("mongoose");
-const multer = require("multer");
-const cors = require("cors");
+import mongoose from "mongoose";
+import cors from "cors";
+import multer from "multer";
 const Category = require("./model/Category");
 const Customer = require("./model/customer");
 const Post = require("./model/post");
