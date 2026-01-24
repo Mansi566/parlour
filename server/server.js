@@ -28,6 +28,12 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+
+// serve frontend
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+
+
 // 2. Saves images to a 'uploads' folder
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, "uploads/"),
@@ -182,14 +188,16 @@ app.delete("/api/category/:id", async (req, res) => {
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
+
 // API example
-app.get("/api/test", (req, res) => {
-  return res.json({ message: "API working" });
+// app.get("/api/test", (req, res) => {
+//   return res.json({ message: "API working" });
+// });
+
+// Example API route
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from server!" });
 });
-
-
-// serve frontend
-app.use(express.static(path.join(__dirname, "client/dist")));
 
 
 // Catch-all route for React
