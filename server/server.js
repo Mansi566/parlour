@@ -4,11 +4,11 @@ import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 import cors from "cors";
 import multer from "multer";
-const Category = require("./model/Category");
-const Customer = require("./model/customer");
-const Post = require("./model/post");
+import Category from "./model/Category.js";
+import Customer from "./model/customer.js";
+import Post  from "./model/post.js";
 dotenv = require("dotenv");config();
-
+  
 // Load environment variables from .env file
 // dotenv.config();
 // const PORT = process.env.PORT || 5000;
