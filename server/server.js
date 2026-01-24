@@ -192,7 +192,7 @@ app.get("/api/test", (req, res) => {
 app.use(express.static(path.join(__dirname, "client/dist")));
 
 
-// ⚠️ ALWAYS LAST (SPA fallback)
+// Catch-all route for React
 app.get('/*', (req, res) => {
   res.sendFile(join(__dirname, '../client/build', 'index.html'));
 });
