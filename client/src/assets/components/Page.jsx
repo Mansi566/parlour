@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import logo from "../images/logo.png";
+import logo from "../images/logo.png"; // only works if images is a sibling of components
 import heroImage from "../images/hero-section.png";
 import logocopy from "../images/logo-copy.png";
 import hairstyle from "../images/group-2085662945.png";
