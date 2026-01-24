@@ -1,0 +1,10 @@
+{
+  "name": "fullstack-render-app",
+  "private": true,
+  "scripts": {
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "build": "npm run install-client && npm run install-server && cd client && npm run build",
+    "start": "node server/index.js"
+  }
+}

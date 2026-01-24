@@ -7,6 +7,10 @@ import multer from "multer";
 const Category = require("./model/Category");
 const Customer = require("./model/customer");
 const Post = require("./model/post");
+dotenv = require("dotenv");config();
+
+// Load environment variables from .env file
+// dotenv.config();
 // const PORT = process.env.PORT || 5000;
 const dbURI = process.env.MONGO_URI || "mongodb://localhost:27017/my_database";
 
@@ -178,13 +182,15 @@ app.delete("/api/category/:id", async (req, res) => {
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
-// serve frontend
-app.use(express.static(path.join(__dirname, "client/dist")));
-
 // API example
 app.get("/api/test", (req, res) => {
   return res.json({ message: "API working" });
 });
+
+
+// serve frontend
+app.use(express.static(path.join(__dirname, "client/dist")));
+
 
 // ⚠️ ALWAYS LAST (SPA fallback)
 app.get("*", (req, res) => {
