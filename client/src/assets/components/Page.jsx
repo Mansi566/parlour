@@ -3,34 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import logo from "../images/logo.png"; // only works if images is a sibling of components
-import heroImage from "client/src/assets/images/hero-section-image.png";
-import logocopy from "client/src/assets/images/logocopy.png";
-import hairstyle from "client/src/assets/images/group-2085662945.png";
-import shoes from "client/src/assets/images/group-2085662932.png";
-import gown from "client/src/assets/images/group-2085662933.png";
-import tshirt from "client/src/assets/images/group-2085662934.png";
-import watches from "client/src/assets/images/group-2085662935.png";
-import earrings from "client/src/assets/images/group-2085662936.png";
-import kurti from "client/src/assets/images/group-2085662942.png";
-import jewellery from "client/src/assets/images/group-2085662947.png";
-import nailpaint from "client/src/assets/images/group-2085662937.png";
-import chniyacholi from "client/src/assets/images/group-2085662938.png";
-import saree from "client/src/assets/images/group-2085662939.png";
-import purse from "client/src/assets/images/group-2085662940.png";
-import mehndi from "client/src/assets/images/group-2085662941.png";
-import pants from "client/src/assets/images/group-2085662943.png";
-import aboutImage from "client/src/assets/images/about.png";
-import playstore from "client/src/assets/images/group.png";
-import appstore from "client/src/assets/images/ios.png";
-import mail from "client/src/assets/images/mail.png";
-import parlourlogo from "client/src/assets/images/theparlour.png";
-import newmobile from "client/src/assets/images/new-mobile.png";
-import Profile from "client/src/assets/images/profile.png";
-import Message from "client/src/assets/images/message-chat-view.png";
-import ProductDetails from "client/src/assets/images/product-details.png";
-import Home from "client/src/assets/images/home.png";
-import Splash from "client/src/assets/images/splash.png";
+import newmobile from "client/public/new-mobile.png";
+import Profile from "client/public/profile.png";
+import Message from "client/public/message-chat-view.png";
+import ProductDetails from "client/public/product-details.png";
+import Home from "client/public/home.png";
+import Splash from "client/public/splash.png";
 
 
 function Page() {
@@ -138,7 +116,7 @@ function Page() {
       {/* <navbar> */}
       <nav className="flex justify-between items-center p-4 ">
         <div>
-          <img src={logo} alt="Logo" className="w-70 px-10" />
+          <img src="/logo.png" alt="logo" className="w-70 px-10"  />
         </div>
         <div className="flex items-center mr-15">
           <ul className="flex space-x-7 mr-3 my-3 font-semibold">
@@ -184,7 +162,7 @@ function Page() {
         <div className="w-full">
           <img
             className="position-relative w-full h-full"
-            src={heroImage}
+            src="/hero-section-image.png"
             alt="Hero Section"
             style={{
               objectFit: "cover",
@@ -198,7 +176,7 @@ function Page() {
          flex flex-col items-center"
         >
           <img
-            src={logocopy}
+            src="/logo-copy.png"
             alt="Logo Copy"
             className="w-50 h-50 justify-center mt-11"
             style={{ objectFit: "fill" }}
@@ -235,7 +213,7 @@ function Page() {
           <div>
             <Link to="/hair">
               <img
-                src={hairstyle}
+                src="/hair-style.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -247,7 +225,7 @@ function Page() {
           <div>
             <Link to="/shoes">
               <img
-                src={shoes}
+                src="/shoes.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -259,7 +237,7 @@ function Page() {
           <div>
             <Link to="/gown">
               <img
-                src={gown}
+                src="/gown.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -271,7 +249,7 @@ function Page() {
           <div>
             <Link to="/tshirt">
               <img
-                src={tshirt}
+                src="/tshirt.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -283,7 +261,7 @@ function Page() {
           <div>
             <Link to="/watches">
               <img
-                src={watches}
+                src="/watches.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -295,7 +273,7 @@ function Page() {
           <div>
             <Link to="/earrings">
               <img
-                src={earrings}
+                src="/earrings.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -307,7 +285,7 @@ function Page() {
           <div>
             <Link to="/kurti">
               <img
-                src={kurti}
+                src="/kurti.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -319,7 +297,7 @@ function Page() {
           <div>
             <Link to="/jewellery">
               <img
-                src={jewellery}
+                src="/jewellery.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -331,7 +309,7 @@ function Page() {
           <div>
             <Link to="/nailpaint">
               <img
-                src={nailpaint}
+                src="/nailpaint.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -343,7 +321,7 @@ function Page() {
           <div>
             <Link to="/chniyacholi">
               <img
-                src={chniyacholi}
+                src="/chniyacholi.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -355,7 +333,7 @@ function Page() {
           <div>
             <Link to="/saree">
               <img
-                src={saree}
+                src="/saree.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -367,7 +345,7 @@ function Page() {
           <div>
             <Link to="/purse">
               <img
-                src={purse}
+                src="/purse.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -379,7 +357,7 @@ function Page() {
           <div>
             <Link to="/mehndi">
               <img
-                src={mehndi}
+                src="/mehndi.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -391,7 +369,7 @@ function Page() {
           <div>
             <Link to="/pants">
               <img
-                src={pants}
+                src="/pants.png"
                 alt="missing"
                 width="100"
                 height="100"
@@ -409,7 +387,7 @@ function Page() {
           <div className="w-1/2 flex justify-center items-center">
             <img
               className="w-4/5 h-1/2 ml-15"
-              src={aboutImage}
+              src="/about-image.png"
               alt="missing"
               style={{ borderRadius: "15px" }}
             />
@@ -546,8 +524,8 @@ function Page() {
           Get the Parlour on the
         </h3>
         <div className="flex justify-center items-center space-x-2 mt-3">
-          <img src={playstore} alt="missing" className="w-60 h-45" />
-          <img src={appstore} alt="missing" className="w-60 h-45" />
+          <img src="/playstore.png" alt="missing" className="w-60 h-45" />
+          <img src="/appstore.png" alt="missing" className="w-60 h-45" />
         </div>
       </div>
       {/* <Part-4> */}
@@ -570,7 +548,7 @@ function Page() {
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 bg-[#a94ef0] rounded-full flex items-center justify-center text-white text-lg mr-3">
                 <img
-                  src={mail}
+                  src="/mail.png"
                   alt="Email"
                   loading="lazy"
                   decoding="async"
@@ -586,7 +564,7 @@ function Page() {
             <div className="flex items-center">
               <div className="w-10 h-10 bg-[#a94ef0] rounded-full flex items-center justify-center text-white text-lg mr-3">
                 <img
-                  src={mail}
+                  src="/mail.png"
                   alt="Phone"
                   loading="lazy"
                   decoding="async"
@@ -654,7 +632,7 @@ function Page() {
             <div className="w-1/2 flex justify-start items-center">
               <div>
                 <img
-                  src={parlourlogo}
+                  src="/parlourlogo.png"
                   alt="The Parlour Logo"
                   className="w-92 h-23"
                 />
