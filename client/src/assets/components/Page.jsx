@@ -3,12 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import newmobile from "client/public/new-mobile.png";
-import Profile from "client/public/profile.png";
-import Message from "client/public/message-chat-view.png";
-import ProductDetails from "client/public/product-details.png";
-import Home from "client/public/home.png";
-import Splash from "client/public/splash.png";
 
 
 function Page() {
@@ -61,7 +55,7 @@ function Page() {
   {
     /* <slide image> */
   }
-  const images = [Profile, Message, ProductDetails, Home, Splash];
+  const images = ["/Profile", "/Message", "/ProductDetails", "/Home", "/Splash"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -72,7 +66,7 @@ function Page() {
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
-  const images1 = [Message, ProductDetails, Home, Splash, Profile];
+  const images1 = ["/Message", "/ProductDetails", "/Home", "/Splash", "/Profile"];
   const [currentIndex1, setCurrentIndex1] = useState(0);
 
   useEffect(() => {
@@ -82,7 +76,7 @@ function Page() {
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
-  const images2 = [ProductDetails, Home, Splash, Profile, Message];
+  const images2 = ["/ProductDetails", "/Home", "/Splash", "/Profile", "/Message"];
   const [currentIndex2, setCurrentIndex2] = useState(0);
 
   useEffect(() => {
@@ -92,7 +86,7 @@ function Page() {
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
-  const images3 = [Home, Splash, Profile, Message, ProductDetails];
+  const images3 = ["/Home", "/Splash", "/Profile", "/Message", "/ProductDetails"];
   const [currentIndex3, setCurrentIndex3] = useState(0);
 
   useEffect(() => {
@@ -102,7 +96,7 @@ function Page() {
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
-  const images4 = [Splash, Profile, Message, ProductDetails, Home];
+  const images4 = ["/Splash", "/Profile", "/Message", "/ProductDetails", "/Home"];
   const [currentIndex4, setCurrentIndex4] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -494,7 +488,7 @@ function Page() {
               decoding="async"
               width={255}
               height={250}
-              src={newmobile}
+              src="/new-mobile.png"
               alt=""
               className="justify-self-center-safe position-relative"
             />
