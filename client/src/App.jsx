@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Page from "./assets/components/Page";
+import Page from "client/src/assets/components/Page";
 import Login from "./assets/components/Login";
 import Download from "./assets/components/Download"
 import Admin from "./assets/components/Admin/Admin";
